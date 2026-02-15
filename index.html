@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>San Valentín 💖</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+
+<body>
+
+<!-- Pantalla de introducción -->
+<div class="pantalla visible" id="intro">
+    <h1>Hola 💕</h1>
+    <button onclick="mostrarPregunta()">Continuar</button>
+</div>
+
+<!-- Pregunta inicial -->
+<div class="pantalla oculta" id="pregunta">
+    <h1>¿Quieres Ser Mi San Valentín?</h1>
+    <button onclick="respuestaSi()">Sí</button>
+    <button id="botonNo" onclick="moverNo()">No</button>
+</div>
+
+<!-- Pantalla de selección de canciones -->
+<div class="pantalla oculta" id="pantallaMusica">
+    <h1>Elige una canción 💖</h1>
+    <button onclick="reproducirCarta('c1')">Canción 1</button>
+    <button onclick="mostrarPoema()">Canción 2 💌</button>
+    <button onclick="mostrarInteractiva()">Canción 3</button>
+</div>
+
+<!-- Pantalla de carta -->
+<div class="pantalla oculta" id="pantallaCarta">
+    <h1>Para ti 💌</h1>
+    <div class="carta-estilo">
+        <img src="img/carta.png" alt="Carta" class="carta-img">
+    </div>
+    <button onclick="volverMusica()">Volver</button>
+</div>
+
+<!-- Pantalla de poema -->
+<div class="pantalla oculta" id="pantallaPoema">
+    <h1>Un poema para ti 💖</h1>
+    <div id="poema" class="poema-contenedor"></div>
+    <button onclick="volverMusica()">Volver</button>
+</div>
+
+<!-- Pantalla interactiva / diploma -->
+<div class="pantalla oculta" id="pantallaInteractiva">
+    <h1>¡Hora de tu diploma! ✨</h1>
+    <button onclick="hacerPregunta(1)">Opción 1</button>
+    <button onclick="hacerPregunta(2)">Opción 2</button>
+
+    <div id="preguntaInteractiva" class="oculta">
+        <label for="respuestaUsuario">Escribe tu nombre completo:</label>
+        <input type="text" id="respuestaUsuario">
+        <button onclick="generarPDF()">Crear PDF</button>
+        <button onclick="volverMusica()">Volver</button>
+    </div>
+</div>
+
+<!-- Audios -->
+<audio id="musica" src="musica/soñe.mp3"></audio>
+<audio id="c1" src="musica/como_tu.mp3"></audio>
+<audio id="c2" src="musica/eres.mp3"></audio>
+<audio id="c3" src="musica/brillas.mp3"></audio>
+
+<!-- Script principal -->
+<script src="js/script.js"></script>
+
+</body>
+</html>
